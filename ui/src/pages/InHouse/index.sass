@@ -1,0 +1,29 @@
+.switch
+    --false: #CF4E5B
+    --true: #5AFFCE
+    .dlc
+        --true: #FFD74A
+
+    input[type=checkbox]
+        border: 1px solid rgba(255, 255, 255, 0.09)
+        border-radius: 6px
+        appearance: none
+        height: 34px
+        width: 100%
+        background-color: #2b2d38
+        position: relative
+        cursor: pointer
+
+    input[type=checkbox]::before
+        content: ''
+        position: absolute
+        display: block
+        height: 100%
+        width: 40px
+        background-color: var(--false)
+        border-radius: 6px
+        transition: color .3s ease
+
+    input[type=checkbox]:checked::before
+        background-color: var(--true)
+        left: calc(100% - (40px))
